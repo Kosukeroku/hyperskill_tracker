@@ -8,7 +8,7 @@ public class StudentBook {
     private static final String STUDENTS_HEADER = "Students: ";
 
     public StudentBook() {
-        students = new ArrayList<Student>();
+        students = new ArrayList<>();
     }
 
     public void addStudent(Student student) {
