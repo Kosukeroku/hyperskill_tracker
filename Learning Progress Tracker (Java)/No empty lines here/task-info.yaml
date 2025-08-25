@@ -1,0 +1,23 @@
+type: edu
+files:
+  - name: src/tracker/Main.java
+    visible: true
+    learner_created: false
+  - name: test/tracker/SampleTest.java
+    visible: true
+    learner_created: false
+  - name: test/LearningProgressTrackerTest.java
+    visible: false
+    learner_created: false
+  - name: build.gradle
+    visible: true
+    learner_created: false
+  - name: src/tracker/UserInterface.java
+    visible: true
+    learner_created: true
+feedback_link: https://hyperskill.org/learn/step/14396#comment
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Sat, 23 Aug 2025 22:47:53 UTC"
+record: 1
