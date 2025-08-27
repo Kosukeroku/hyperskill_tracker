@@ -8,6 +8,8 @@ public class UserInterface {
     private static final String ADD_COMMAND = "add students";
     private static final String BACK_COMMAND = "back";
     private static final String LIST_COMMAND = "list";
+    private static final String ADD_POINTS_COMMAND = "add points";
+    private static final String FIND_COMMAND = "find";
 
     private static final String GREETING_MESSAGE = "Learning Progress Tracker";
     private static final String NO_INPUT_MESSAGE = "No input.";
@@ -15,10 +17,13 @@ public class UserInterface {
     private static final String UNKNOWN_COMMAND_MESSAGE = "Error: unknown command!";
     private static final String ADDING_INFO_MESSAGE = "Enter student credentials or 'back' to return: ";
     private static final String ADDING_SUCCESS_MESSAGE = "The student has been added.";
-    private static final String ADDING_RESULT_MESSAGE = "Total: %s student(s) added.\n";
+    private static final String ADDING_RESULT_MESSAGE = "Total %s students have been added.\n";
     private static final String EXIT_HINT_MESSAGE = "Enter 'exit' to exit the program.";
     private static final String EMAIL_TAKEN_MESSAGE = "This email is already taken.";
     private static final String EMPTY_BOOK_MESSAGE = "No students found.";
+    private static final String ADDING_POINTS_HINT_MESSAGE = "Enter an id and points or 'back' to return: ";
+    private static final String SEARCHING_POINTS_HINT_MESSAGE = "Enter an id or 'back' to return: ";
+    private static final String WRONG_ID_FORMAT_MESSAGE = "Wrong id format.";
 
     private final Scanner scanner;
     private StudentBook studentBook;
@@ -44,6 +49,9 @@ public class UserInterface {
                     System.out.println(BYE_MESSAGE);
                     return;
                 }
+                case FIND_COMMAND -> {
+                    handleFindStudent();
+                }
                 case BACK_COMMAND -> {
                     System.out.println(EXIT_HINT_MESSAGE);
                 }
@@ -53,9 +61,34 @@ public class UserInterface {
                 case LIST_COMMAND -> {
                     handleListStudents();
                 }
+                case ADD_POINTS_COMMAND -> {
+                    handleAddPoints();
+                }
                 default -> {
                     System.out.println(UNKNOWN_COMMAND_MESSAGE);
                 }
+            }
+        }
+    }
+
+    private void handleFindStudent() {
+        System.out.println(SEARCHING_POINTS_HINT_MESSAGE);
+        while (true) {
+
+            String input = scanner.nextLine().trim();
+            if (input.equalsIgnoreCase(BACK_COMMAND)) {
+                System.out.printf(ADDING_RESULT_MESSAGE, studentBook.getStudentCount());
+                break;
+            }
+
+            try {
+                int studentId = Integer.parseInt(input);
+                Student searchedStudent = studentBook.getStudentById(studentId);
+                System.out.println(searchedStudent);
+            } catch (NumberFormatException e) {
+                System.out.println(WRONG_ID_FORMAT_MESSAGE);
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
             }
         }
     }
@@ -84,6 +117,24 @@ public class UserInterface {
             System.out.println(EMPTY_BOOK_MESSAGE);
         } else {
             studentBook.printStudents();
+        }
+    }
+
+    private void handleAddPoints() {
+        System.out.println(ADDING_POINTS_HINT_MESSAGE);
+
+        while (true) {
+
+            String input = askCommand();
+            if (input.equalsIgnoreCase(BACK_COMMAND)) {
+                break;
+            }
+
+            try {
+                studentBook.addPointsToStudent(input);
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
 

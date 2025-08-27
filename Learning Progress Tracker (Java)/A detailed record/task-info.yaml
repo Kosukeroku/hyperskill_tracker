@@ -36,14 +36,12 @@ files:
   - name: src/tracker/Course.java
     visible: true
     learner_created: true
+  - name: test/tracker/UserInterfaceMockitoTest.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/14398#comment
-status: Failed
+status: Solved
 feedback:
-  message: "Wrong answer in test #16\n\nExpected: &quot;Total 0 students have been\
-    \ added.&quot;, but your output was: Total: 0 student(s) added.\n\nPlease find\
-    \ below the output of your program during this failed test.\nNote that the &#39;&gt;&#39;\
-    \ character indicates the beginning of the input line.\n\n---\n\nLearning Progress\
-    \ Tracker\n&gt; add students\nEnter student credentials or &#39;back&#39; to return:\
-    \ \n&gt; exit\nIncorrect credentials\n&gt; back\nTotal: 0 student(s) added."
-  time: "Mon, 25 Aug 2025 00:52:04 UTC"
-record: -1
+  message: Congratulations!
+  time: "Tue, 26 Aug 2025 23:12:02 UTC"
+record: 3

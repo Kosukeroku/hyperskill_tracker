@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tracker.UserInterfaceMockitoTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-08-27T22:52:22" hostname="DESKTOP-US93H51" time="0.835">
+  <properties/>
+  <testcase name="testFindCommandValidId()" classname="tracker.UserInterfaceMockitoTest" time="0.804"/>
+  <testcase name="testAddPointsCommandWorkflow()" classname="tracker.UserInterfaceMockitoTest" time="0.003"/>
+  <testcase name="testListPointsNoStudentsCommandWorkflow()" classname="tracker.UserInterfaceMockitoTest" time="0.003"/>
+  <testcase name="testAddingThreeStudents()" classname="tracker.UserInterfaceMockitoTest" time="0.008"/>
+  <testcase name="testListPointsWithStudentsCommandWorkflow()" classname="tracker.UserInterfaceMockitoTest" time="0.002"/>
+  <testcase name="testImmediatelyQuitting()" classname="tracker.UserInterfaceMockitoTest" time="0.002"/>
+  <testcase name="testFindCommandInvalidId()" classname="tracker.UserInterfaceMockitoTest" time="0.004"/>
+  <system-out><![CDATA[Learning Progress Tracker
+Enter an id and points or 'back' to return: 
+Bye!
+Learning Progress Tracker
+Enter student credentials or 'back' to return: 
+The student has been added.
+The student has been added.
+The student has been added.
+Total 0 students have been added.
+Bye!
+Learning Progress Tracker
+Bye!
+Learning Progress Tracker
+Bye!
+]]></system-out>
+  <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\KK\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.14.9\dfb8707031008535048bad2b69735f46d0b6c5e5\byte-buddy-agent-1.14.9.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>
